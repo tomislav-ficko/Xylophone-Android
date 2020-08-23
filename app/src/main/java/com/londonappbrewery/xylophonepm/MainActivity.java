@@ -44,6 +44,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // TODO: Add the play methods triggered by the buttons
+    public void playCSound(View view) {
 
+    }
 
+    public void playDSound(View view) {
+
+    }
+
+    public void playESound(View view) {
+
+    }
+
+    public void playFSound(View view) {
+
+    }
+
+    public void playGSound(View view) {
+
+    }
+
+    public void playASound(View view) {
+
+    }
+
+    public void playBSound(View view) {
+
+    }
 }
