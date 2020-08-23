@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private final int PRIORITY = 0;
     private final float NORMAL_PLAY_RATE = 1.0f;
 
-    // TODO: Add member variables here
+    private SoundPool mSoundpool;
     private int mCSoundId;
     private int mDSoundId;
     private int mESoundId;
@@ -31,44 +31,43 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SoundPool soundPool = new SoundPool.Builder().build();
+        mSoundpool = new SoundPool.Builder().build();
 
-        int cSoundId = soundPool.load(this.getApplicationContext(), R.raw.note1_c, PRIORITY);
-        int dSoundId = soundPool.load(this.getApplicationContext(), R.raw.note2_d, PRIORITY);
-        int eSoundId = soundPool.load(this.getApplicationContext(), R.raw.note1_c, PRIORITY);
-        int fSoundId = soundPool.load(this.getApplicationContext(), R.raw.note4_f, PRIORITY);
-        int gSoundId = soundPool.load(this.getApplicationContext(), R.raw.note5_g, PRIORITY);
-        int aSoundId = soundPool.load(this.getApplicationContext(), R.raw.note6_a, PRIORITY);
-        int bSoundId = soundPool.load(this.getApplicationContext(), R.raw.note7_b, PRIORITY);
+        mCSoundId = mSoundpool.load(getApplicationContext(), R.raw.note1_c, PRIORITY);
+        mDSoundId = mSoundpool.load(getApplicationContext(), R.raw.note2_d, PRIORITY);
+        mESoundId = mSoundpool.load(getApplicationContext(), R.raw.note3_e, PRIORITY);
+        mFSoundId = mSoundpool.load(getApplicationContext(), R.raw.note4_f, PRIORITY);
+        mGSoundId = mSoundpool.load(getApplicationContext(), R.raw.note5_g, PRIORITY);
+        mASoundId = mSoundpool.load(getApplicationContext(), R.raw.note6_a, PRIORITY);
+        mBSoundId = mSoundpool.load(getApplicationContext(), R.raw.note7_b, PRIORITY);
 
     }
 
-    // TODO: Add the play methods triggered by the buttons
     public void playCSound(View view) {
-
+        mSoundpool.play(mCSoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
     }
 
     public void playDSound(View view) {
-
+        mSoundpool.play(mDSoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
     }
 
     public void playESound(View view) {
-
+        mSoundpool.play(mESoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
     }
 
     public void playFSound(View view) {
-
+        mSoundpool.play(mFSoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
     }
 
     public void playGSound(View view) {
-
+        mSoundpool.play(mGSoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
     }
 
     public void playASound(View view) {
-
+        mSoundpool.play(mASoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
     }
 
     public void playBSound(View view) {
-
+        mSoundpool.play(mBSoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
     }
 }
